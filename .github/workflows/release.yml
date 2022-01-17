@@ -1,8 +1,0 @@
-# name: Node.js Release
-
-# on:
-#   push:
-#     branches: [ main ]
-
-# jobs:
-#   push_to_registry:
