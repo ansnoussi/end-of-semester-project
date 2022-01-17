@@ -1,0 +1,19 @@
+config:
+  target: "http://localhost:8080"
+  phases:
+    - duration: 60
+      arrivalRate: 20
+  ensure:
+    maxErrorRate: 1
+
+scenarios:
+  - name: "Simple user flow"
+    flow:
+      - get:
+          url: "/encode/insat2022"
+          expect:
+            - statusCode: 200
+      - get:
+          url: "/decode/aW5zYXQyMDIy"
+          expect:
+            - statusCode: 200

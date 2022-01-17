@@ -1,5 +1,5 @@
 {
-  "name": "factorial-microservice",
+  "name": "end-of-semester-project",
   "version": "1.0.0",
   "description": "simple nodejs microservice",
   "main": "index.js",
@@ -7,19 +7,22 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "test": "jest",
+    "test:load": "artillery run --output reports/report.json artillery/load.yml",
+    "test:load-report": "artillery report --output reports/report.html reports/report.json",
     "lint": "eslint . --ext .js,.ts"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ansnoussi/factorial-microservice.git"
+    "url": "git+https://github.com/ansnoussi/end-of-semester-project.git"
   },
   "author": "Anis Snoussi",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ansnoussi/factorial-microservice/issues"
+    "url": "https://github.com/ansnoussi/end-of-semester-project/issues"
   },
-  "homepage": "https://github.com/ansnoussi/factorial-microservice#readme",
+  "homepage": "https://github.com/ansnoussi/end-of-semester-project#readme",
   "devDependencies": {
+    "artillery": "^2.0.0-10",
     "eslint": "^8.2.0",
     "jest": "^27.3.1",
     "nodemon": "^2.0.15"

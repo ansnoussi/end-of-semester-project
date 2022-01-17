@@ -2,7 +2,7 @@ install:
 	npm install
 
 test: install
-	npm run test
+	npm run test -- --coverage
 
 start_dev: install
 	npm run dev
