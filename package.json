@@ -1,0 +1,32 @@
+{
+  "name": "factorial-microservice",
+  "version": "1.0.0",
+  "description": "simple nodejs microservice",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "jest",
+    "lint": "eslint . --ext .js,.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ansnoussi/factorial-microservice.git"
+  },
+  "author": "Anis Snoussi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ansnoussi/factorial-microservice/issues"
+  },
+  "homepage": "https://github.com/ansnoussi/factorial-microservice#readme",
+  "devDependencies": {
+    "eslint": "^8.2.0",
+    "jest": "^27.3.1",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "prom-client": "^14.0.1"
+  }
+}
