@@ -7,7 +7,8 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "test": "jest",
-    "test:load": "artillery run artillery/load.yml",
+    "test:load": "artillery run --output reports/report.json artillery/load.yml",
+    "test:load-report": "artillery report --output reports/report.html reports/report.json",
     "lint": "eslint . --ext .js,.ts"
   },
   "repository": {

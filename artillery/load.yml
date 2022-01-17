@@ -3,6 +3,8 @@ config:
   phases:
     - duration: 60
       arrivalRate: 20
+  ensure:
+    maxErrorRate: 1
 
 scenarios:
   - name: "Simple user flow"
