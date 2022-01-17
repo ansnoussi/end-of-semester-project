@@ -1,9 +1,9 @@
 const encode = (str) => {
-  return str
+  return Buffer.from(str).toString('base64')
 }
 
 const decode = (str) => {
-  return str
+  return Buffer.from(str, 'base64').toString('ascii')
 }
 
 
