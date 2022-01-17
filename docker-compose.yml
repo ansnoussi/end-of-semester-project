@@ -42,8 +42,6 @@ services:
       
   node-app:
     image: anissnoussi/devopsproject:sha-193749c
-    deploy:
-      replicas: 3
     expose:
       - 8080
     networks:
