@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const client = require("prom-client")
-const {encode, decode} = require('./utils')
+const {encode, decode} = require('./src/utils')
 
 
 // ******************************************************
