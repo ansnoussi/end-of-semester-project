@@ -57,9 +57,9 @@ app.get("/ping", (req, res) => {
 });
 
 
-app.get("/metrics", (req, res) => {
+app.get("/metrics", async (req, res) => {
   res.set("Content-Type", client.register.contentType)
-  res.end(client.register.metrics())
+  res.end( await client.register.metrics())
 });
 
 
