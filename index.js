@@ -83,7 +83,7 @@ app.get("/metrics", async (req, res) => {
 // **************server execution config*****************
 // ******************************************************
 
-var port = process.env.APP_PORT || 3000;
+var port = process.env.APP_PORT || 8080;
 
 app.listen(port, () => {
   console.log("App started.");
