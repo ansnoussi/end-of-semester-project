@@ -10,8 +10,8 @@ RUN npm ci --only=production && npm cache clean --force
 COPY . .
 RUN chown -R node:node .
 
-ENV APP_PORT=3000
-EXPOSE 3000
+ENV APP_PORT=8080
+EXPOSE 8080
 
 USER node
 
