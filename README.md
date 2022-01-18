@@ -62,4 +62,4 @@ This endpoint allows the admin to retrieve application metrics.
 
 ## 🚨 Alerting
 
-...
+Alerting is implemented using [AlertManager](https://prometheus.io/docs/alerting/latest/alertmanager/) which is a single binary that handles alerts sent by [Prometheus](https://prometheus.io/) server and notifies end user through E-mail.
