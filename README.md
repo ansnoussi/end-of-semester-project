@@ -1,55 +1,59 @@
 # End of Semester Projet - Deployment & DevOps
 
-This is an encoding service which offers 2 endpoints for encoding and decoding strings passed in parameters
-
 The project was developed using [Express](https://expressjs.com/), the [Node.js](https://nodejs.org/en/) web application framework.
 
-# Functional endpoints
+## 🏃 Run the project
+To run the project, simply clone the repo and start it using docker-compose :
+```bash
+make start
+```
+This will run :
+- [http://localhost:8080](http://localhost:8080) : The Express app.
+- [http://localhost:9090](http://localhost:9090) : Prometheus Dashboard.
+- [http://localhost:3000](http://localhost:3000) : Grafana Dashboard.
 
-### `GET:: /encode/:str`
+## ⚙️ Functional endpoints
 
-The encode endpoint allows the user to encode a string (passed as a parameter 'str') to base64
+| Endpoint           | Description                                                              |
+|--------------------|--------------------------------------------------------------------------|
+| GET:: /encode/:str | The `encode` endpoint to encode a string `str` into base64               |
+| GET:: /decode/:str | The `decode` endpoint to decode a string `str` from base64 back to ascii |
 
-### `GET:: /decode/:str`
+## 🧪 Tests
 
-The decode endpoint allows the user to decode a string (passed as a parameter 'str') from base64
+### 1. Unit tests
+This project uses [Jest](https://jestjs.io/) to run unit tests and generate a coverage report (**100% coverge** btw).
 
-# CI/CD
+```bash
+make test
+```
+
+### 2. Load test
+This project uses [Artillery](https://www.artillery.io/) to run load test and generate a report (under `reports/report.html`).
+
+```bash
+make load-test
+```
+## 📦 Continious Integration
+
+To be completed
+## 📦 Continious Deployment
 
 To be completed
 
-# Monitoring
+## 📊 Monitoring
 
-The monitoring part of this application was made using the monitoring system & time series database [Prometheus](https://prometheus.io/), which records real-time metrics in a time series database built using a HTTP pull model, with flexible queries and real-time alerting, and also using [Grafana](https://grafana.com/), which is a multi-platform open source analytics and interactive visualization web application. It allows the admin to build operational dashboards to visualize its app data and metrics. It provides charts, graphs, and alerts for the web when connected to supported data sources (Prometheus in this case).
+For monitoring the health of this project we used :
+- [Prometheus](https://prometheus.io/) : records real-time metrics in a time series database built using a HTTP pull model, with flexible queries and real-time alerting.
+- [Grafana](https://grafana.com/) : multi-platform open source analytics and interactive visualization web application
 
-# Monitoring endpoints
-
-### `GET:: /ping`
-
-This endpoint allows the admin to check the health of the instance and if it's always running or broken.
-
-### `GET:: /metrics`
+We also defined 2 custom metrics and later used them in Grafana :
+- `node_encode_request_total` : a mtric of type **Counter** to record the total number of requests to the `/encode` endpoint.
+- `node_decode_request_total` : a mtric of type **Counter** to record the total number of requests to the `/decode` endpoint.
+#### `GET:: /metrics`
 
 This endpoint allows the admin to retrieve application metrics.
 
-## Available Scripts
+## 🚨 Alerting
 
-In the project directory, you can run:
-
-### `npm dev`
-
-Runs the app in the development mode.<br />
-Accessible with [http://localhost:8080](http://localhost:8080) in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm start`
-
-Runs the app in the release mode.<br />
-Accessible with [http://localhost:8080](http://localhost:8080) in the browser.
+...
