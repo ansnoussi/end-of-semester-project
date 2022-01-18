@@ -14,15 +14,23 @@ The encode endpoint allows the user to encode a string (passed as a parameter 's
 
 The decode endpoint allows the user to decode a string (passed as a parameter 'str') from base64
 
-# Additional endpoints
+# CI/CD
 
-### `GET:: /encode/:str`
+To be completed
 
-The encode endpoint allows the user to encode a string (passed as a parameter 'str') to base64
+# Monitoring
 
-### `GET:: /decode/:str`
+The monitoring part of this application was made using the monitoring system & time series database [Prometheus](https://prometheus.io/), which records real-time metrics in a time series database built using a HTTP pull model, with flexible queries and real-time alerting, and also using [Grafana](https://grafana.com/), which is a multi-platform open source analytics and interactive visualization web application. It allows the admin to build operational dashboards to visualize its app data and metrics. It provides charts, graphs, and alerts for the web when connected to supported data sources (Prometheus in this case).
 
-The decode endpoint allows the user to decode a string (passed as a parameter 'str') from base64
+# Monitoring endpoints
+
+### `GET:: /ping`
+
+This endpoint allows the admin to check the health of the instance and if it's always running or broken.
+
+### `GET:: /metrics`
+
+This endpoint allows the admin to retrieve application metrics.
 
 ## Available Scripts
 
