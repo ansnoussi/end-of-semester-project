@@ -53,7 +53,7 @@ app.get("/decode/:str", (req, res) => {
     let str = req.params.str;
     counterDec.inc()
     return res.status(200).json({
-      encoded: decode(str),
+      decoded: decode(str),
     });
 
   } catch (e) {
