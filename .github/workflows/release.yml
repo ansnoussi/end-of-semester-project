@@ -24,3 +24,20 @@ jobs:
           context: .
           push: true
           tags: ${{secrets.DOCKERHUB_USERNAME}}/devopsproject:${{ github.sha }}
+
+      - 
+        name: Update Version In Checked-Out Code
+        run: |
+          sed -i "s@\(.*image:\).*@\1 ${{secrets.DOCKERHUB_USERNAME}}/devopsproject:${{ github.sha }}@" ${GITHUB_WORKSPACE}/docker-compose.yaml
+      - 
+        name: Commit The New Image Reference
+        uses: stefanzweifel/git-auto-commit-action@v4
+        if: ${{ github.event.client_payload.sha }}
+        with:
+          commit_message: Deploy new image ${{ github.sha }}
+          branch: deploy
+          commit_options: '--no-verify --signoff'
+          repository: .
+          commit_user_name: Deploy Bot
+          commit_user_email: deploy-bot@insat.tn
+          commit_author: Deploy Bot <deploy-bot@insat.tn>
