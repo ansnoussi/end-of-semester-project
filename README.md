@@ -1,7 +1,20 @@
 # End of Semester Projet - Deployment & DevOps
+
 This is an encoding service which offers 2 endpoints for encoding and decoding strings passed in parameters
 
-# Endpoints
+The project was developed using [Express](https://expressjs.com/), the [Node.js](https://nodejs.org/en/) web application framework.
+
+# Functional endpoints
+
+### `GET:: /encode/:str`
+
+The encode endpoint allows the user to encode a string (passed as a parameter 'str') to base64
+
+### `GET:: /decode/:str`
+
+The decode endpoint allows the user to decode a string (passed as a parameter 'str') from base64
+
+# Additional endpoints
 
 ### `GET:: /encode/:str`
 
