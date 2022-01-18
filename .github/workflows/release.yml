@@ -28,7 +28,7 @@ jobs:
       - 
         name: Update Version In Checked-Out Code
         run: |
-          sed -i "s@\(.*image:\).*@\1 ${{secrets.DOCKERHUB_USERNAME}}/devopsproject:${{ github.sha }}@" ${GITHUB_WORKSPACE}/docker-compose.yaml
+          sed -i "s@\(.*image:\).*@\1 ${{secrets.DOCKERHUB_USERNAME}}/devopsproject:${{ github.sha }}@" docker-compose.yaml
       - 
         name: Commit The New Image Reference
         uses: stefanzweifel/git-auto-commit-action@v4
