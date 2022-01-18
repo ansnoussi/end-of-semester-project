@@ -52,3 +52,4 @@ jobs:
           deploy_path: /home/ubuntu/devops-project
           stack_file_name: docker-compose.yml
           args: up -d
+          docker_prune: true
