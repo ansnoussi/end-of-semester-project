@@ -1,8 +1,15 @@
 # End of Semester Projet - Deployment & DevOps
-This an encoding service which offers 2 endpoints for encoding and decoding strings passed in parameters
+This is an encoding service which offers 2 endpoints for encoding and decoding strings passed in parameters
 
 # Endpoints
 
+### `GET:: /encode/:str`
+
+The encode endpoint allows the user to encode a string (passed as a parameter 'str') to base64
+
+### `GET:: /decode/:str`
+
+The decode endpoint allows the user to decode a string (passed as a parameter 'str') from base64
 
 ## Available Scripts
 
