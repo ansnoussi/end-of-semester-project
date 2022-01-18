@@ -36,10 +36,16 @@ make load-test
 ```
 ## 📦 Continious Integration
 
-To be completed
+Defined in `.github/workflows/node.js.yml`, runs the following on pull requests to the `main` branch :
+- Runs unit tests on different Node.js versions (12.x, 14.x, 16.x).
+- Runs a lint job.
 ## 📦 Continious Deployment
 
-To be completed
+Defined in `.github/workflows/release.yml`, runs the following on pull requests to the `main` branch :
+1. Build docker image and tag it.
+2. Push the image to docker hub.
+3. updates the `docker-compose` file
+4. deploys the docker-compose file in the machine.
 
 ## 📊 Monitoring
 
