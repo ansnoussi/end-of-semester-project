@@ -63,3 +63,8 @@ This endpoint allows the admin to retrieve application metrics.
 ## 🚨 Alerting
 
 Alerting is implemented using [AlertManager](https://prometheus.io/docs/alerting/latest/alertmanager/) which is a single binary that handles alerts sent by [Prometheus](https://prometheus.io/) server and notifies end user through E-mail.
+
+For that, we defined 3 custom alerts :
+- `ContainerMemoryUsage` : alerts the end user whenver container Memory usage is above 80% for at least 2 minutes
+- `ContainerVolumeUsage` : alerts the end user whenver container Volume usage is above 80% for at least 2 minutes
+- `HostOutOfMemory` : alerts the end user whenver the node memory is filling up (< 10% left)
