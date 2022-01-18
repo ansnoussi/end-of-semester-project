@@ -49,6 +49,6 @@ jobs:
           ssh_public_key: ${{ secrets.DOCKER_SSH_PUBLIC_KEY }}
           deployment_mode: docker-compose
           copy_stack_file: true
-          deploy_path: /root/my-deployment
+          deploy_path: /home/ubuntu/devops-project
           stack_file_name: docker-compose.yml
           args: up -d
